@@ -1,20 +1,16 @@
 const {readFileSync, promises: fsPromises} = require('fs');
 
-// ✅ read file SYNCHRONOUSLY
+//Function to read out files.
 function syncReadFile(filename) {
   const contents = readFileSync(filename, 'utf-8');
 
   const arr = contents.split(/\r?\n/);
-
-  //console.log(arr); // 👉️ ['One', 'Two', 'Three', 'Four']
 
   return arr;
 }
 
 var calories = syncReadFile('./input.txt');
 var countedCalories = [];
-//console.log(calories);
-
 var count = 0;
 
 //Loop through array and count each elves' calories.
